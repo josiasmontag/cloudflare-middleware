@@ -172,7 +172,7 @@ class CloudflareMiddleware
         /*
          * Extract JavaScript challenge logic
          */
-        preg_match_all('/:[\/!\[\]+()]+|[-*+\/]?=[\/!\[\]+()]+/', $cf_script, $matches);
+        preg_match_all('/:[\/!\[\]+()]+|[-*+\/]?=[\/!\[\]+()]+/', $content, $matches);
 
         if (!isset($matches[0]) || !isset($matches[0][0])) {
             throw new \ErrorException('Unable to find javascript challenge logic; maybe not protected?');
